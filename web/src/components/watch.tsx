@@ -19,7 +19,7 @@ export default function Watch(props: { name: string }) {
 	const [showCatalog, setShowCatalog] = createSignal(false)
 
 	createEffect(() => {
-		const namespace = props.name
+		const namespace = params.name || props.name
 		const url = `https://${server}`
 
 		// Special case localhost to fetch the TLS fingerprint from the server.

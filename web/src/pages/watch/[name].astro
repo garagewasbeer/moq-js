@@ -1,5 +1,7 @@
 ---
-export const prerender = false
+export function getStaticPaths() {
+	return [{ params: { name: "static" } }]
+}
 
 const { name } = Astro.params
 if (!name) return Astro.redirect("/404")
